@@ -1,0 +1,169 @@
+/* # Coder un calculateur d'IMC
+
+> ctrl+shift+v sur VS Code pour analyser ce fichier markdown
+
+<br>
+
+Le but de ce projet est de coder un **calculateur d'IMC** à partir des valeurs rentrées par un utilisateur dans les **deux inputs**.
+
+<br>
+
+### A. Coder une interface basique
+> Codez d'abord une interface très simple, contenant les éléments importants : boutons, inputs, liens, etc... <br>
+> Rajoutez un peu de style si besoin est. 
+> <br>
+> Puis codez les fonctionnalités JavaScript.
+> 
+<br>
+
+### B. Fonctionnalités JavaScript à coder pour ce projet
+
+1. Gérez les inputs, retrouvez leur valeur dans votre script quand on clique sur le bouton.
+2. Faites une validation basique, empêchez le calcul si l'utilisateur laisse un ou deux inputs vides. <br>
+Montrez également un message pour l'informer de l'erreur (ex : "Veuillez remplir les inputs").
+1. Calculez l'IMC avec les valeurs rentrées.
+2. Calculez le rang de l'IMC par rapport à "IMCData"
+3. Remplissez l'interface en fonction des résultats
+   
+<br>
+
+### C. Ajoutez du style à l'interface afin de terminer le projet.
+ */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Lato, Helvetica, sans-serif;
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
+  padding: clamp(20px, 5vw, 50px) 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:root {
+  --base-color: #111;
+  --secondary-color: #7575a1;
+  --bg-color: #f1f1f1;
+  --btn-color: #fabe33;
+  --base-police: Raleway, sans-serif;
+  --secondary-police: Lato, sans-serif;
+  --shadow: 0 3px 5px 3px #11111144;
+}
+
+.container-imc {
+  max-width: 850px;
+  background-color: var(--bg-color);
+  box-shadow: var(--shadow);
+  border-radius: 5px;
+  padding: 30px 75px;
+}
+
+h1 {
+  font-weight: 300;
+  font-family: var(--secondary-police);
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.inputs-container {
+  display: flex;
+  justify-content: center;
+}
+
+.inputs-container label {
+  display: block;
+  margin-bottom: 7px;
+  font-family: var(--base-police);
+  color: #111;
+  font-weight: 500;
+  margin-left: 20px;
+}
+
+.poid-taille {
+  gap: 50px;
+  margin-bottom: 40px;
+}
+
+input[type="number"] {
+  min-width: 350px;
+  box-shadow: var(--shadow);
+  border-radius: 5px;
+  border: none;
+  border-bottom: 1px solid #222;
+  outline: none;
+  padding: 15px;
+  font-size: 18px;
+  font-family: var(--secondary-police);
+  color: var(--secondary-color);
+}
+
+input[type="number"]:nth-child(2) {
+  margin-left: 20px;
+}
+input[type="number"]:focus {
+  outline: 1px solid #222222be;
+}
+
+button {
+  background-color: var(--btn-color);
+  font-family: var(--secondary-police);
+  padding: 8px 25px;
+  font-size: 16px;
+  border-radius: 5px;
+  color: #333733;
+  font-weight: 800;
+  border: none;
+  margin: 40px auto;
+  cursor: pointer;
+  display: block;
+}
+
+button:hover {
+  background-color: #ffb70e;
+}
+
+.text-info {
+  text-align: center;
+}
+.score {
+  font-family: var(--secondary-police);
+  color: #111;
+  font-size: 45px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.waiting {
+  font-family: var(--secondary-police);
+  font-size: 20px;
+  font-weight: 300;
+}
+
+@media (max-width: 800px) {
+  .container-imc {
+    max-width: 600px;
+  }
+  .inputs-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  input[type="number"]:nth-child(2) {
+    margin-top: 15px;
+    margin-left: 0;
+  }
+  .poid-taille {
+    width: 100%;
+  }
+  .poid-taille input {
+    width: 100%;
+    min-width: auto;
+  }
+}
